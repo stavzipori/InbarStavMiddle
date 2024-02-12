@@ -1,0 +1,286 @@
+﻿<!doctype html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="JavaScript Prog 3">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="Telem">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title> מטלת אמצע ענבר חגג וסתיו צפורי </title>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- bootstrap -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div>
+    </div>
+
+    <nav>
+      <button id="nav-button" class="btn-mobile hide" onclick="toggleNav()"><img src="img/nav-icon.svg"
+          alt="ניווט"></button>
+      <ul id="main-nav" class="flex-container-nav hide-mobile">
+
+        <li><a href="#"> דף הבית </a></li>
+        <li><a href="#"> אודות המכביה </a></li>
+        <li><a href="#" style="text-decoration: underline; color: #2d327b; cursor:not-allowed"> משלחות </a></li>
+        <li><a href="#"> ערים מארחות </a></li>
+      </ul>
+    </nav>
+
+    <div id="headerPic">
+      <h1>
+        משלחות המשתתפות במכביה
+      </h1>
+    </div>
+
+    <main>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary filter-btn" data-cat="אירופה">אירופה</button>
+        <button type="button" class="btn btn-secondary filter-btn" data-cat="צפון אמריקה">צפון אמריקה</button>
+        <button type="button" class="btn btn-secondary filter-btn" data-cat="דרום אמריקה">דרום אמריקה</button>
+        <button type="button" class="btn btn-secondary filter-btn" data-cat="אסיה">אסיה</button>
+        <button type="button" class="btn btn-secondary filter-btn" data-cat="אוסטרליה">אוסטרליה</button>
+        <button type="button" class="btn btn-secondary filter-btn" data-cat="אפריקה">אפריקה</button>
+        <button class="btn btn-secondary" onclick="createItems()">X</button>
+      </div>
+
+      <!-- פה יוצגו המערכות -->
+      <div id="itemsContainer" class="flex-container container">
+
+      </div>
+
+
+
+
+      <div class="modal fade" id="exampleModal_1" tabindex="-1" arialabelledby="
+      exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">איטליה</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <a href="http://www.maccabi.it/" target="_blank" class="APopUp">ראו כאן את אתר הנבחרת של המכביה של איטליה
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="exampleModal_2" tabindex="-1" arialabelledby="
+  exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">שוויץ</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <a href="https://www.maccabi-schweiz.ch/" target="_blank" class="APopUp">ראו כאן את אתר הנבחרת של המכביה
+                של שוויץ
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="exampleModal_3" tabindex="-1" arialabelledby="
+exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">יוון</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <a href="https://www.maccabi.gr/" target="_blank" class="APopUp">ראו כאן את אתר הנבחרת של המכביה של יוון
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="modal fade" id="exampleModal_4" tabindex="-1" arialabelledby="
+exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">ארצות הברית</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <a href="https://maccabiusa.com/" target="_blank" class="APopUp">ראו כאן את אתר הנבחרת של המכביה של ארצות
+                הברית
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="modal fade" id="exampleModal_5" tabindex="-1" arialabelledby="
+exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">ברזיל</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <a href="http://macabibrasil.com.br/21a-macabiada-mundial-2021/" target="_blank" class="APopUp">ראו כאן את
+                אתר הנבחרת של
+                המכביה של ברזיל
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="modal fade" id="exampleModal_6" tabindex="-1" arialabelledby="
+exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">ארגנטינה</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <a href="https://www.instagram.com/faccma_argentina/" target="_blank" class="APopUp">ראו כאן את אתר הנבחרת
+                של
+                המכביה של ארגנטינה
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="modal fade" id="exampleModal_7" tabindex="-1" arialabelledby="
+exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">הודו</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <a href="https://www.facebook.com/maccabi.india" target="_blank" class="APopUp">ראו כאן את אתר הנבחרת של
+                המכביה של הודו
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="modal fade" id="exampleModal_8" tabindex="-1" arialabelledby="
+exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">דרום אפריקה</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <a href="https://maccabi.co.za/site/" target="_blank" class="APopUp">ראו כאן את אתר הנבחרת של
+                המכביה של דרום אפריקה
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="modal fade" id="exampleModal_9" tabindex="-1" arialabelledby="
+exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">אוסטרליה</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <a href="https://www.instagram.com/maccabiaustralia/" target="_blank" class="APopUp">ראו כאן את אתר הנבחרת
+                של
+                המכביה של אוסטרליה
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="modal fade" id="exampleModal_10" tabindex="-1" arialabelledby="
+exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">מקסיקו</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <a href="https://www.cdi.org.mx/" target="_blank" class="APopUp">ראו כאן את אתר הנבחרת של
+                המכביה של מקסיקו
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+
+
+  </div>
+</body>
+
+</html>
