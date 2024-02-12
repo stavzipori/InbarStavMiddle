@@ -119,36 +119,23 @@ function scrollInd() {
 
 // פונקציה ליצירת הרשימה
 function createItems() {
-        // הבאת האלמנט בו ניצור את הרשימה בדף
         const itemsContainer = document.getElementById('itemsContainer');
         itemsContainer.setAttribute("class", "row justify-content-center card-deck");
         itemsContainer.setAttribute("style", " padding-right:-18px !important;padding-left:-18px  !important;");
-        // איפוס של האלמנט
         itemsContainer.innerHTML = "";
 
-        // מעבר על הרשימה מעלה והוספה של פריט לרשימה בדף בכל סיבוב
         jsonData.conutries.forEach(conutry => {
-                // יצירה של תגית הפריט
                 const myCard = document.createElement("div");
-                // הוספת מזהה לתגית
                 myCard.setAttribute("id", `div_${conutry.id}`);
-                // הוספת מחלקה
                 myCard.setAttribute("class", "card text-right col-sm-3 m-3");
                 myCard.addEventListener("mouseover", enlargeCard);
-                //myCard.addEventListener("mouseover", showOverlay);
                 myCard.addEventListener("mouseout", shrinkCard);
-                //myCard.addEventListener("mouseout", hideOverlay);
-                
 
-
-                // יצירת הטקסט של הפריט
                 const Itempic = document.createElement("img");
                 Itempic.setAttribute("src", `img/${conutry.pic}`);
                 Itempic.setAttribute("class", "card-img-top");
-
                 myCard.appendChild(Itempic);
                
-
                 const Itembody = document.createElement("div");
                 Itembody.setAttribute("class", "card-body");
                 myCard.appendChild(Itembody);
@@ -182,65 +169,54 @@ function createItems() {
 
 function filterItems(category) {
 
-        const itemsContainer = document.getElementById('itemsContainer');
-        itemsContainer.setAttribute("class", "row justify-content-xs-center ps-3 pt-3 card-deck");
-        // איפוס של האלמנט
+       const itemsContainer = document.getElementById('itemsContainer');
+        itemsContainer.setAttribute("class", "row justify-content-center card-deck");
+        itemsContainer.setAttribute("style", " padding-right:-18px !important;padding-left:-18px  !important;");
         itemsContainer.innerHTML = "";
-
-        // מעבר על הרשימה מעלה והוספה של פריט לרשימה בדף בכל סיבוב
+        
         jsonData.conutries.forEach(conutry => {
 
                 if (conutry.cat == category) {
-                        // יצירה של תגית הפריט
-                        const myCard = document.createElement("div");
-                        // הוספת מזהה לתגית
-                        myCard.setAttribute("id", `div_${conutry.id}`);
-                        // הוספת מחלקה
-                        myCard.setAttribute("class", "card text-right col-sm-3 m-3");
+                       const myCard = document.createElement("div");
+                myCard.setAttribute("id", `div_${conutry.id}`);
+                myCard.setAttribute("class", "card text-right col-sm-3 m-3");
+                myCard.addEventListener("mouseover", enlargeCard);
+                myCard.addEventListener("mouseout", shrinkCard);
+
+                const Itempic = document.createElement("img");
+                Itempic.setAttribute("src", `img/${conutry.pic}`);
+                Itempic.setAttribute("class", "card-img-top");
+                myCard.appendChild(Itempic);
+               
+                const Itembody = document.createElement("div");
+                Itembody.setAttribute("class", "card-body");
+                myCard.appendChild(Itembody);
+
+                const ItemTitle = document.createElement("h5");
+                ItemTitle.setAttribute("class", "card-title");
+                ItemTitle.innerHTML = (` ${conutry.title}`);
+                Itembody.appendChild(ItemTitle);
 
 
-                        // יצירת הטקסט של הפריט
-                        const Itempic = document.createElement("img");
-                        Itempic.setAttribute("src", `img/${conutry.pic}`);
-                        Itempic.setAttribute("class", "card-img-top");
-                        myCard.appendChild(Itempic);
+                const ItemSports = document.createElement("p");
+                ItemSports.setAttribute("class", "card-text");
+                ItemSports.setAttribute("style", "margin-bottom:50px;");
+                ItemSports.innerHTML = (` ${conutry.Sports}`);
+                Itembody.appendChild(ItemSports);
 
 
-                        const Itembody = document.createElement("div");
-                        Itembody.setAttribute("class", "card-body");
-                        myCard.appendChild(Itembody);
-
-                        const ItemTitle = document.createElement("h5");
-                        ItemTitle.setAttribute("class", "card-title");
-                        ItemTitle.innerHTML = (` ${conutry.title}`);
-                        Itembody.appendChild(ItemTitle);
-                        // הוספת אירועים
-                        // מעבר עכבר
-                        //listItem.addEventListener("mouseover", hoverTopic);
-                        // יציאת עכבר
-                        //listItem.addEventListener("mouseout", outTopic);
-                        // לחיצה
-                        //listItem.addEventListener("click", clickTopic);
-
-
-                        const ItemSports = document.createElement("p");
-                        ItemSports.setAttribute("class", "card-text");
-                        ItemSports.innerHTML = (` ${conutry.Sports}`);
-                        Itembody.appendChild(ItemSports);
-
-
-                        const Itembtn = document.createElement("button");
-                        Itembtn.setAttribute("class", "btn btn-outline-primary");
-                        Itembtn.setAttribute("data-bs-toggle", "modal");
-                        Itembtn.setAttribute("data-bs-target", `#exampleModal_${conutry.id}`);
-                        Itembtn.setAttribute("style", "float: left;");
-                        Itembtn.innerHTML = ("לעוד מידע");
-                        Itembody.appendChild(Itembtn);
-                        itemsContainer.appendChild(myCard);
+                const Itembtn = document.createElement("button");
+                Itembtn.setAttribute("type", "button");
+                Itembtn.setAttribute("class", "btn btn-outline-primary");
+                Itembtn.setAttribute("data-bs-toggle", "modal");
+                Itembtn.setAttribute("data-bs-target", `#exampleModal_${conutry.id}`);
+                Itembtn.setAttribute("style", "float:left;position: absolute; bottom: 10px; left: 10px;");
+                Itembtn.innerHTML = ("לעוד מידע");
+                Itembody.appendChild(Itembtn);
+                itemsContainer.appendChild(myCard);
                 }
 
         });
-        // הוספת הרשימה לאלמנט בדף
 
 
 
