@@ -38,20 +38,6 @@ main {
   position: relative;
 }
 
-/* עיצוב כפתור המבורגר וכפתור סגירה 
-.btn-mobile {
-  border: none;
-  background: none;
-  padding: .5rem;
-}
-
-/* כפתור סגירת תפריט 
-#close-nav-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  cursor: pointer;
-}*/
 
 .btn-mobile img {
   width: 2rem;
@@ -66,87 +52,6 @@ main {
   position: relative !important;
 }
 
-/* תפריט ניווט */
-/* עימוד בטור במובייל 
-.flex-container-nav {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #199990;
-  flex-direction: column;
-  padding: 1rem 0;
-  position: absolute;
-  height: 50%;
-  width: 50%;
-  top: 0;
-  padding-top: 6rem;
-  text-decoration: none;
-}
-
-/* עיצוב פריטי התפריט 
-.flex-container-nav li {
-  margin-bottom: 1rem;
-}
-
-/* לא נרצה שמתחת לפריט התחתון יהיה רווח 
-.flex-container-nav li:last-child {
-  margin-bottom: 0;
-}
-
-.flex-container-nav li a {
-  color: white;
-  text-decoration: none;
-}
-
-/* הצגת תפריט המבורגר במובייל 
-.btn-mobile {
-  display: block;
-}
-
-/* הסתרת התפריט במובייל 
-.flex-container-nav.hide-mobile {
-  display: none;
-}
-*/
-/* עיצוב קוביות התוכן 
-.flex-container-subjects {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.flex-container-subjects li {
-  width: 8rem;
-  height: 8rem;
-  margin: 0.5rem;
-  background-color: #720A6E;
-  border-radius: 10%;
-  text-align: center;
-  font-size: 1.2rem;
-  color: white;
-
-  /* נגדיר כל פריט ברשימה כ */
-/* flex */
-/* ונמרכז את הטקסט שבתוכו 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-*/
-
-
-/* תמונות בתחתית המסך 
-
-.flex-container-images {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-}*/
 
 .APopUp {
   display: inline-block;
@@ -208,13 +113,6 @@ main {
   display: block;
 }
 
-/* הגדרות לתמונות 
-.card-img-top {
-  /* width: 100%;
-  object-fit: cover;
-  height: 95px;
-  margin-right: -18px;
-}*/
 
 /* הגדרות כלליות - כותרות ופסקאות */
 h1 {
@@ -242,10 +140,6 @@ p {
     display: none;
   }
 
-  /* .card-img-top{
-    object-fit: cover;
-  } */
-
   /* עימוד התפריט בשורה במסך גדול ושינוי צבע */
   .flex-container-nav {
     flex-direction: row;
@@ -269,12 +163,6 @@ p {
     margin-bottom: 0;
   }
 
-  /*
-  .flex-container-subjects li {
-      margin: 2rem;
-      background-color: #199990;
-  }
-*/
 
   /* במסך גדול כותרת לא ממורכזת */
   h1 {
@@ -302,41 +190,6 @@ p {
 
 }
 
-/*
-.flex-container{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 20px;
-}
-*/
-
-/* 
-.btn-primary{
-  background-color: #d4d4d4;
-  border: none;
-}
-
-
-.btn-primary:hover{
-  background-color: #999999;
-  border: none;
-}
-
-
-.btn-outline-primary{
-  float: left;
-  color: black;
-  border-color: black;
-  font-size: 0.5rem;
-}
-
-
-.btn-outline-primary:hover{
-  color: black;
-  border-color: black;
-  background-color: aliceblue;
-} */
 
 
 #headerPic {
