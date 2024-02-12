@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 // When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
+window.onscroll = function() {scrollInd()};
 
 function scrollInd() {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
